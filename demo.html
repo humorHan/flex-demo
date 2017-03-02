@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 300px;
+            /*注意： start和end的位置是相对的，看flex-direction的属性值*/
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: row-reverse;   /*主轴水平 右边为起点*/
+            -webkit-flex-direction: row-reverse;
+            flex-wrap: wrap-reverse;
+            -webkit-flex-wrap: wrap-reverse;
+            justify-content: flex-end;
+            -webkit-justify-content: flex-end;
+            align-items: center;
+            -webkit-align-items: center;
+        }
+        .son{
+            width: 150px;
+            background: darkseagreen;
+            margin: 0 10px;
+        }
+        .third{
+            /*order: -1*/
+            order: 1;   /*数值越小越靠前*/
+            flex-grow: 0.5; /*放大0.5*/
+            align-self: flex-end;  /*单条覆盖align-item属性*/
+            /*flex-shrink:0.6*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son">1</div>
+        <div class="son">2</div>
+        <div class="son third">3</div>
+        <div class="son">4</div>
+        <div class="son">5</div>
+        <div class="son">6</div>
+        <div class="son">7</div>
+        <div class="son">8</div>
+    </div>
+</body>
+</html>
